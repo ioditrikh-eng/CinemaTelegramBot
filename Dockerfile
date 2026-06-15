@@ -11,6 +11,8 @@ FROM mcr.microsoft.com/dotnet/runtime:8.0
 WORKDIR /app
 COPY --from=build /app/out .
 
+COPY CinemaDatabase.db .
+
 ENV BOT_TOKEN=""
 
 CMD ["dotnet", "CinemaTelegramBot.dll"]
